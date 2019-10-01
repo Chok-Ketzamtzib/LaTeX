@@ -1,0 +1,201 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{William's Resume (July 2018)}
+\author{William Wakefield }
+\date{July 2018}
+
+
+
+\usepackage[cm]{fullpage}
+\usepackage{color}
+\usepackage{hyperref}
+
+\hypersetup{breaklinks=true,%
+pagecolor=white,%
+colorlinks=true,%
+linkcolor=black,%
+urlcolor=black}
+
+%\definecolor{MyDarkBlue}{rgb}{0,0.0,0.45}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formatting parameters  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newlength{\tabin}
+\setlength{\tabin}{1em}
+\newlength{\secsep}
+\setlength{\secsep}{0.1cm}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+\definecolor{contactgray}{gray}{0.3}
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Template Definitions  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-6pt} \hrulefill \\ \vspace*{-15pt}}
+\newcommand{\name}[1]{\begin{center}\textsc{\Huge#1}\\\end{center}}
+\newcommand{\program}[1]{\begin{center}\textsc{#1}\end{center}}
+\newcommand{\contact}[1]{\begin{center}\color{contactgray}{\small#1}\end{center}}
+
+\newenvironment{tabbedsection}[1]{
+  \begin{list}{}{
+      \setlength{\itemsep}{0pt}
+      \setlength{\labelsep}{0pt}
+      \setlength{\labelwidth}{0pt}
+      \setlength{\leftmargin}{\tabin}
+      \setlength{\rightmargin}{\tabin}
+      \setlength{\listparindent}{0pt}
+      \setlength{\parsep}{0pt}
+      \setlength{\parskip}{0pt}
+      \setlength{\partopsep}{0pt}
+      \setlength{\topsep}{#1}
+    }
+  \item[]
+}{\end{list}}
+
+\newenvironment{nospacetabbing}{
+    \begin{tabbing}
+}{\end{tabbing}\vspace{-1.2em}}
+
+\newenvironment{resume_header}{}{\vspace{0pt}}
+
+
+\newenvironment{resume_section}[1]{
+  \filbreak
+  \vspace{2\secsep}
+  \textsc{\large#1}
+  \lineunder
+  \begin{tabbedsection}{\secsep}
+}{\end{tabbedsection}}
+
+\newenvironment{resume_subsection}[2][]{
+  \textbf{#2} \hfill {\footnotesize #1} \hspace{2em}
+  \begin{tabbedsection}{0.5\secsep}
+}{\end{tabbedsection}}
+
+\newenvironment{subitems}{
+  \renewcommand{\labelitemi}{-}
+  \begin{itemize}
+      \setlength{\labelsep}{1em}
+}{\end{itemize}}
+
+\newenvironment{resume_employer}[4]{
+  \vspace{\secsep}
+  \textbf{#1} \\ 
+  \indent {\small #2} \hfill {\footnotesize#3 (#4)}
+  \begin{tabbedsection}{0pt}
+  \begin{subitems}
+}{\end{subitems}\end{tabbedsection}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Start Document     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+    \begin{resume_header}
+        \name{William J. Wakefield}
+        \contact{
+            \href{mailto:wakeforest.ww@gmail.com}{wakeforest.ww@gmail.com} 
+                \hspace{0.5cm}
+                    \href{https://github.com/Chok-Ketzamtzib}{github.com/Chok-Ketzamtzib} 
+                        \hspace{0.5cm} 
+                            \href{https://www.linkedin.com/in/william-j-wakefield}{linkedin.com/in/william-j-wakefield}  
+                                \hspace{0.5cm} 904-237-6270
+                }
+    \end{resume_header}
+
+    \begin{resume_section}{Objective}
+         \begin{nospacetabbing}
+
+             \item To learn new software engineering \& applied math skills in order to tackle challenges at your company and complete\\ projects. 
+              Available for co-op/continual internships Jan-Mar/June-Sept.
+  
+         \end{nospacetabbing}
+
+    \end{resume_section}
+
+
+
+
+    \begin{resume_section}{Work Experience}
+        \begin{resume_employer}{Florida Blue}{Java Developer}{Jacksonville, FL}{January 2019--Present}
+
+            \item Assisted with the Event Bus Project, an Event Pipeline with an Avro serializer built in Java which used Kafka to partition data from multiple domains, ensuring a better, secure, and real-time  experience for clients. 
+    
+            \item Built a Batch Application in Java to validate data transferring from Hadoop Database to MongoDB, ensuring quality assurance of clients' Personal Health Information (PHI).
+    
+            \item Created XSLT program to convert XML to a user-friendly HTML \& PDF to benefit doctors and patients viewing their health information.
+    
+        \end{resume_employer}
+        
+        \begin{resume_employer}{Johnson \& Johnson Vision Care}{Robotics \& Quality Engineering Intern}{Jacksonville, FL}{Summer 2018}
+  
+            \item Taught four-week robotics course to 13 interns. Interns learned mechanical engineering \& software engineering principles to create competitive robots that helped improve teamwork, communication, and safety in the workplace. Also taught the importance of quality assurance and practiced this for each task assigned.
+    
+            \item Aided the engineering department in maintaining and improving processes within contact lens production lines from yield rate $\sim$84\% to $\sim$90\% under four weeks.
+            \item Participated in Toastmasters, Professional Public Speaking in Business Charter.
+    
+  \end{resume_employer}
+  \end{resume_section}
+
+\begin{resume_section}{Competitions, Activities and Awards}
+
+    \begin{resume_subsection}[(September 2019 - Present)]{HackMIT 2019 Water Crusader Project-- Founder/Developer}
+        \begin{subitems}
+            \item Won 2nd place overall  \& 1st in Social Good, using IBM Watson to predict corrosion of water pipes.
+            \item Achieved \$2000 from IBM's Disaster Preparedness \& Relief Solutions Challenge, gaining IBM as an official partner to make the Water Crusader Project full-scale to benefit the Flint community in their water crisis.
+   
+        \end{subitems}
+    \end{resume_subsection}
+
+    \begin{resume_subsection}[(July 2018 -Present)]{SAE International AutoDrive Challenge -- Mapping Lead/Programmer}
+         \begin{subitems}
+            \item Compiled HD Maps \& reported mapping attributes, leading to organized data for navigation programs.
+            \item Parsed Proto3 files to create geometries of polylines provided to control team, allowing advanced control \& providing the autonomous vehicle ability to go to a desired destination.
+            \item Won 1st place in Concept Design Report, implementing solutions to increase mobility of autonomous vehicles.
+        \end{subitems}
+    \end{resume_subsection}
+  
+    \begin{resume_subsection}[(August 2014 - Present)]{FIRST Robotics -- FIRST Alumnus, Mentor}
+        \begin{subitems}
+            \item Founded FIRST Tech Challenge Team, expanding STEM for 300 people in Northeast Florida.
+            \item Built a pneumatic grabber using mill, lathe, and woodworking skills which led to the Excellence in Engineering Award sponsored by Delphi (Orlando Regional) \& the Creativity Award sponsored by Xerox (FIRST World Championship/Galileo Division).
+            \item Created with Kettering's FIRST Alumni board tools and whiteboards sent to over 4000 teams worldwide, helping students have the resources to compete in the FIRST robotics program. 
+        
+        \end{subitems}
+    \end{resume_subsection}
+
+    \begin{resume_subsection}[(2018-Present)]{Kettering Presidential Scholarship \& FIRST Robotics Scholarship}
+    \end{resume_subsection}
+\end{resume_section}
+
+ \begin{resume_section}{Skills and Interests}
+  \begin{nospacetabbing}
+
+  \textbf{Technical Skills}  \=  Java, MATLAB/R, JavaScript (React), Python, Node-RED \& IBM Watson, \LaTeX, MongoDB \\*
+  \textbf{Languages} \> Fluent in Spanish, Latin, Kaqchikel Maya - Two Florida State Gold Biliteracy Seals in Latin \& Spanish\\*
+  \textbf{Interests} \> Autonomous Vehicles, Robotics, Fluid Dynamics, R\&D work, Mayan Languages \& Culture\\*
+  \end{nospacetabbing}
+
+\end{resume_section}
+
+\begin{resume_section}{Education}
+  \begin{resume_subsection}[Flint, MI (July 2018--Present)]{Kettering University}
+    \begin{subitems}
+      \item Sophomore, B.S. of Applied Mathematics \& Computer Science. 
+    \end{subitems}
+  \end{resume_subsection}
+ 
+\end{resume_section}
+\end{document}
